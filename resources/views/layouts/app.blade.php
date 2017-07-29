@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.js">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
 
     <!-- Scripts -->
     <script>
@@ -87,6 +89,8 @@
 
     <!-- Scripts -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/query.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap.min.js"></script>
     <script src="/js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
