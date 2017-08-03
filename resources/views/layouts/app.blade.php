@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/jquery.dataTables.min.js">
     <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
@@ -49,6 +49,7 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::check())
                         <li><a href="{{url('/home')}}">Dashboard</a></li>
+                        <li><a href="#">Penulis</a></li>
                         @endif
                     </ul>
 
@@ -88,9 +89,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
     <script src="/js/query.dataTables.min.js"></script>
     <script src="/js/dataTables.bootstrap.min.js"></script>
-    <script src="/js/jquery-3.2.1.min.js"></script>
+   @yield('scripts')
 </body>
 </html>

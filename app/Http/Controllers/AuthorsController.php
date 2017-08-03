@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Role;
+use App\User;
+use App\Author;
+use App\Yajra\Datatables\Html\Builder;
+use Yajra\Datatables\
 
 class AuthorsController extends Controller
 {

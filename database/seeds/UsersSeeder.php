@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Role;
+use App\User;
 
 class UsersSeeder extends Seeder
 {
@@ -23,17 +25,11 @@ class UsersSeeder extends Seeder
         $memberRole->display_name = "Member";
         $memberRole->save();
 
-        //Role admin
-        $adminRole = new Role();
-        $adminRole->name = "admin";
-        $adminRole->display_name = "Admin";
-        $adminRole->save();
-
         //Sample admin
         $admin = new User();
         $admin->name = 'Admin Larapus';
         $admin->email = 'admin@gmail.com';
-        $admin->password =bycrypt('rahasia') ;
+        $admin->password =bcrypt('rahasia') ;
         $admin->save();
         $admin->attachRole($adminRole);
 
@@ -41,7 +37,7 @@ class UsersSeeder extends Seeder
         $member = new User();
         $member->name = 'Sample Member';
         $member->email = 'member@gmail.com';
-        $member->password =bycrypt('rahasia') ;
+        $member->password =bcrypt('rahasia') ;
         $member->save();
         $member->attachRole($memberRole);
     }
