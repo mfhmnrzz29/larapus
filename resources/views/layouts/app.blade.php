@@ -14,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/jquery.dataTables.min.js">
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
-
+    <link rel="stylesheet" href="css/selectize.css">
+    <link rel="stylesheet" href="css/selectize.bootstrap3.css">    
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -49,8 +50,11 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::check())
                         <li><a href="{{url('/home')}}">Dashboard</a></li>
-                        <li><a href="#">Penulis</a></li>
                         @endif
+                        @role('admin')
+                        <li><a href="{{route('authors.index')}}">Penulis</a></li>
+                        <li><a href="{{route('books.index')}}">Buku</a></li>
+                        @endrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -84,14 +88,16 @@
                 </div>
             </div>
         </nav>
-
+        @include('layouts._flash')
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/query.dataTables.min.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
     <script src="/js/dataTables.bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script src="/js/selectize.min.js"></script>
    @yield('scripts')
 </body>
 </html>

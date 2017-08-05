@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix'=>'admin', 'middleware'=>['auth']],function(){
+Route::group(['prefix'=>'admin', 'middleware'=>['auth','role:admin']],function(){
 	Route::resource('authors', 'AuthorsController');
+	Route::resource('books', 'BooksController');
 });
 
 Route::get('/home', 'HomeController@index');
